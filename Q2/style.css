@@ -1,0 +1,405 @@
+/* =========================
+   UNIVERSAL SELECTOR
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body {
+    margin: 0;
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #eef4f8;
+
+    color: #222;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: #173f67;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 32px;
+}
+
+header p {
+    margin-top: 10px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   COLLEGE IMAGE
+   ========================= */
+
+.image-container {
+    width: 100%;
+
+    margin-bottom: 25px;
+}
+
+.image-container img {
+    display: block;
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 3px solid #1769aa;
+}
+
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h2 {
+    color: #1769aa;
+
+    border-bottom: 2px solid #1769aa;
+
+    padding-bottom: 8px;
+
+    margin-top: 25px;
+}
+
+h3 {
+    color: #173f67;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FORM LABELS
+   ========================= */
+
+form > label {
+    display: block;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FORM INPUTS
+   ========================= */
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 6px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   FOCUS SELECTOR
+   ========================= */
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: none;
+
+    border: 2px solid #1769aa;
+
+    box-shadow: 0 0 5px rgba(23, 105, 170, 0.25);
+}
+
+
+/* =========================
+   TEXTAREA
+   ========================= */
+
+textarea {
+    height: 110px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   GENDER
+   ========================= */
+
+.gender {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 10px;
+}
+
+.gender label {
+    margin: 0;
+
+    font-weight: normal;
+}
+
+.gender input {
+    width: auto;
+
+    margin-right: 5px;
+}
+
+
+/* =========================
+   CHECKBOX
+   ========================= */
+
+.confirm {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    font-weight: normal;
+}
+
+.confirm input {
+    width: auto;
+
+    margin: 0;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+button {
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #1769aa;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* HOVER SELECTOR */
+
+button:hover {
+    background-color: #0d4d7d;
+
+    transform: translateY(-2px);
+}
+
+
+.reset-button {
+    background-color: #777;
+}
+
+
+.reset-button:hover {
+    background-color: #555;
+}
+
+
+/* =========================
+   MEDIA SECTION
+   ========================= */
+
+.media {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background-color: #f5f9fc;
+
+    border: 1px solid #d5e2eb;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   AUDIO
+   ========================= */
+
+audio {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+
+.audio-note {
+    font-size: 13px;
+
+    color: #666;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   VIDEO
+   ========================= */
+
+video {
+    display: block;
+
+    width: 100%;
+
+    height: 400px;
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    background-color: black;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    margin-top: 30px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background-color: #173f67;
+
+    color: white;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .image-container img {
+        height: 200px;
+    }
+
+    .gender {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    video {
+        height: 250px;
+    }
+
+}

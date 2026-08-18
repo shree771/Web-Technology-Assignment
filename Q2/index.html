@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Admission Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <h1>Student Admission Form</h1>
+            <p>Welcome to Our College</p>
+        </header>
+
+
+        <!-- COLLEGE IMAGE -->
+        <div class="image-container">
+            <img
+                src="./college.jpg"
+                alt="College Campus">
+        </div>
+
+
+        <!-- ADMISSION FORM -->
+        <form>
+
+            <h2>Personal Information</h2>
+
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required>
+
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                required>
+
+
+            <label for="dob">Date of Birth</label>
+            <input
+                type="date"
+                id="dob"
+                required>
+
+
+            <label>Gender</label>
+
+            <div class="gender">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="male">
+                    Male
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="female">
+                    Female
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="other">
+                    Other
+                </label>
+
+            </div>
+
+
+            <!-- COURSE -->
+            <h2>Course Information</h2>
+
+            <label for="course">Select Course</label>
+
+            <select id="course" required>
+
+                <option value="">
+                    -- Select Course --
+                </option>
+
+                <option>
+                    B.E. Computer Science and Engineering
+                </option>
+
+                <option>
+                    B.E. Artificial Intelligence and Machine Learning
+                </option>
+
+                <option>
+                    B.E. Electronics and Communication Engineering
+                </option>
+
+                <option>
+                    B.E. Information Technology
+                </option>
+
+            </select>
+
+
+            <label for="percentage">
+                12th Percentage
+            </label>
+
+            <input
+                type="number"
+                id="percentage"
+                placeholder="Enter percentage"
+                min="0"
+                max="100"
+                required>
+
+
+            <label for="phone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                required>
+
+
+            <label for="address">
+                Address
+            </label>
+
+            <textarea
+                id="address"
+                placeholder="Enter your complete address"
+                required></textarea>
+
+
+            <label for="marksheet">
+                Upload Marksheet
+            </label>
+
+            <input
+                type="file"
+                id="marksheet">
+
+
+            <!-- CHECKBOX -->
+            <label class="confirm">
+
+                <input
+                    type="checkbox"
+                    required>
+
+                I confirm that the information
+                provided is correct.
+
+            </label>
+
+
+            <!-- BUTTONS -->
+            <div class="buttons">
+
+                <button type="submit">
+                    Submit Application
+                </button>
+
+                <button
+                    type="reset"
+                    class="reset-button">
+                    Reset
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- MEDIA SECTION -->
+        <section class="media">
+
+            <h2>College Media</h2>
+
+
+            <!-- BUILT-IN AUDIO -->
+            <h3>College Introduction Audio</h3>
+
+            <audio controls id="collegeAudio">
+                Your browser does not support the audio element.
+            </audio>
+
+            <p class="audio-note">
+                Click the play button to listen to the
+                college introduction audio.
+            </p>
+
+
+            <!-- VIDEO -->
+            <h3>College Introduction Video</h3>
+
+            <video
+                controls
+                poster="./college.jpg">
+
+                <source
+                    src="./college-video.mp4"
+                    type="video/mp4">
+
+                Your browser does not support
+                the video element.
+
+            </video>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Web Technology Assignment - 2026</p>
+        </footer>
+
+    </div>
+
+
+    <!-- BUILT-IN AUDIO SCRIPT -->
+    <script>
+
+        /*
+         * Creates a small audio clip directly in the browser.
+         * No MP3 file is required.
+         */
+
+        const audio = document.getElementById("collegeAudio");
+
+        const audioContext =
+            new (window.AudioContext ||
+                 window.webkitAudioContext)();
+
+        const sampleRate = 8000;
+        const duration = 2;
+        const frequency = 440;
+
+        const buffer =
+            audioContext.createBuffer(
+                1,
+                sampleRate * duration,
+                sampleRate
+            );
+
+        const data = buffer.getChannelData(0);
+
+        for (let i = 0; i < data.length; i++) {
+
+            data[i] =
+                Math.sin(
+                    2 * Math.PI *
+                    frequency *
+                    i / sampleRate
+                ) * 0.3;
+        }
+
+        /*
+         * Convert the generated audio into a WAV file.
+         */
+
+        function createWavBlob(buffer) {
+
+            const channelData =
+                buffer.getChannelData(0);
+
+            const length =
+                channelData.length * 2;
+
+            const arrayBuffer =
+                new ArrayBuffer(44 + length);
+
+            const view =
+                new DataView(arrayBuffer);
+
+
+            function writeString(offset, string) {
+
+                for (let i = 0; i < string.length; i++) {
+
+                    view.setUint8(
+                        offset + i,
+                        string.charCodeAt(i)
+                    );
+                }
+            }
+
+
+            writeString(0, "RIFF");
+
+            view.setUint32(
+                4,
+                36 + length,
+                true
+            );
+
+            writeString(8, "WAVE");
+
+            writeString(12, "fmt ");
+
+            view.setUint32(16, 16, true);
+
+            view.setUint16(20, 1, true);
+
+            view.setUint16(22, 1, true);
+
+            view.setUint32(
+                24,
+                sampleRate,
+                true
+            );
+
+            view.setUint32(
+                28,
+                sampleRate * 2,
+                true
+            );
+
+            view.setUint16(32, 2, true);
+
+            view.setUint16(34, 16, true);
+
+            writeString(36, "data");
+
+            view.setUint32(
+                40,
+                length,
+                true
+            );
+
+
+            let offset = 44;
+
+            for (let i = 0; i < channelData.length; i++) {
+
+                let sample =
+                    Math.max(
+                        -1,
+                        Math.min(1, channelData[i])
+                    );
+
+                view.setInt16(
+                    offset,
+                    sample < 0
+                        ? sample * 0x8000
+                        : sample * 0x7FFF,
+                    true
+                );
+
+                offset += 2;
+            }
+
+
+            return new Blob(
+                [arrayBuffer],
+                { type: "audio/wav" }
+            );
+        }
+
+
+        const wavBlob =
+            createWavBlob(buffer);
+
+        const audioURL =
+            URL.createObjectURL(wavBlob);
+
+        audio.src = audioURL;
+
+    </script>
+
+</body>
+
+</html>
