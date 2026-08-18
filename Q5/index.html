@@ -1,1 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <!-- =================================================
+         PAGE INFORMATION
+         ================================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Supermarket Billing System</title>
+
+    <!-- CONNECT CSS FILE -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =================================================
+         MAIN CONTAINER
+         ================================================= -->
+
+    <div class="container">
+
+        <!-- PAGE HEADING -->
+
+        <h1>Supermarket Billing System</h1>
+
+        <p class="subtitle">
+            Enter product quantity and unit price
+        </p>
+
+
+        <!-- =================================================
+             PRODUCT 1
+             ================================================= -->
+
+        <div class="product">
+
+            <h2>Product 1</h2>
+
+            <!-- Product Name -->
+
+            <label for="product1">
+                Product Name
+            </label>
+
+            <input
+                type="text"
+                id="product1"
+                placeholder="Enter product name">
+
+
+            <!-- Quantity -->
+
+            <label for="quantity1">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity1"
+                min="1"
+                placeholder="Enter quantity">
+
+
+            <!-- Unit Price -->
+
+            <label for="price1">
+                Unit Price (₹)
+            </label>
+
+            <input
+                type="number"
+                id="price1"
+                min="0"
+                placeholder="Enter unit price">
+
+        </div>
+
+
+        <!-- =================================================
+             PRODUCT 2
+             ================================================= -->
+
+        <div class="product">
+
+            <h2>Product 2</h2>
+
+            <label for="product2">
+                Product Name
+            </label>
+
+            <input
+                type="text"
+                id="product2"
+                placeholder="Enter product name">
+
+
+            <label for="quantity2">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity2"
+                min="1"
+                placeholder="Enter quantity">
+
+
+            <label for="price2">
+                Unit Price (₹)
+            </label>
+
+            <input
+                type="number"
+                id="price2"
+                min="0"
+                placeholder="Enter unit price">
+
+        </div>
+
+
+        <!-- =================================================
+             PRODUCT 3
+             ================================================= -->
+
+        <div class="product">
+
+            <h2>Product 3</h2>
+
+            <label for="product3">
+                Product Name
+            </label>
+
+            <input
+                type="text"
+                id="product3"
+                placeholder="Enter product name">
+
+
+            <label for="quantity3">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity3"
+                min="1"
+                placeholder="Enter quantity">
+
+
+            <label for="price3">
+                Unit Price (₹)
+            </label>
+
+            <input
+                type="number"
+                id="price3"
+                min="0"
+                placeholder="Enter unit price">
+
+        </div>
+
+
+        <!-- =================================================
+             BUTTONS
+             ================================================= -->
+
+        <div class="buttons">
+
+            <!-- CALCULATE BUTTON -->
+
+            <button
+                class="calculate-btn"
+                onclick="calculateBill()">
+
+                Calculate Bill
+
+            </button>
+
+
+            <!-- RESET BUTTON -->
+
+            <button
+                class="reset-btn"
+                onclick="resetBill()">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             BILL RESULT
+             ================================================= -->
+
+        <div id="result">
+
+            <p>
+                Enter product details and click
+                <strong>Calculate Bill</strong>.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONNECT JAVASCRIPT FILE -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
